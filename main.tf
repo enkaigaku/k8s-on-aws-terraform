@@ -15,5 +15,5 @@ resource "aws_vpc" "k8s-vpc" {
 resource "aws_subnet" "k8s-subnet-1" {
   vpc_id = aws_vpc.k8s-vpc.id
   cidr_block = var.cidr_block[1]
-  availability_zone = "ap-northeast-1c"
+  availability_zone = "ap-northeast-1a"
 }
