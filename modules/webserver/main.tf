@@ -41,6 +41,7 @@ data "aws_ami" "latest-amazon-linux" {
 resource "aws_instance" "myapp-ec2" {
   ami = data.aws_ami.latest-amazon-linux.id
   instance_type = var.instance_type
+  count = 2
 
   subnet_id = var.subnet_id
   vpc_security_group_ids = [aws_security_group.myapp-sg.id]
